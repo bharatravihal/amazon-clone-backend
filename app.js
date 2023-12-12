@@ -17,11 +17,12 @@ const cookieParser = require("cookie-parser");
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+const port = process.env.port || 8005;
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser(""));
 app.use(router);
-app.listen(process.env.port, () => {
+app.listen(port, () => {
   console.log(`server connected to ${process.env.port}`);
 });
 Defaultdata();
